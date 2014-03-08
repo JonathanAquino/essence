@@ -260,12 +260,13 @@ $Essence = Essence\Essence::instance([
 
 	// the container will return a unique instance of CustomHttpClient
 	// each time an HTTP client is needed
-	'Http' => Essence\Di\Container::unique( function( ) {
+	'Http' => Blunt\Di\Container::unique( function( ) {
 		return new CustomHttpClient( );
 	})
 ]);
 ```
 
+Note that Essence is using a dependency injection container from the [Blunt](https://github.com/blunt-php/blunt) library.
 The default injection settings are defined in the [Standard](https://github.com/felixgirault/essence/blob/master/lib/Essence/Di/Container/Standard.php) container class.
 
 Try it out
