@@ -5,12 +5,11 @@
  *	@license FreeBSD License (http://opensource.org/licenses/BSD-2-Clause)
  */
 
-use Essence\Utility\Autoload;
+use Blunt\Utility\Autoload;
 
-require_once dirname( __FILE__ )
-	. DIRECTORY_SEPARATOR . 'Essence'
-	. DIRECTORY_SEPARATOR . 'Utility'
-	. DIRECTORY_SEPARATOR . 'Autoload.php';
+require_once dirname( dirname( __FILE__ ))
+	. DIRECTORY_SEPARATOR . 'vendor'
+	. DIRECTORY_SEPARATOR . 'autoload.php';
 
 
 
