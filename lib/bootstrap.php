@@ -17,13 +17,11 @@ require_once dirname( dirname( __FILE__ ))
  *	Definitions
  */
 
-if ( !defined( 'ESSENCE_LIB' )) {
-	define( 'ESSENCE_LIB', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
-}
+defined( 'ESSENCE_LIB' )
+or define( 'ESSENCE_LIB', dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
 
-if ( !defined( 'ESSENCE_DEFAULT_PROVIDERS' )) {
-	define( 'ESSENCE_DEFAULT_PROVIDERS', ESSENCE_LIB . 'providers.php' );
-}
+defined( 'ESSENCE_DEFAULT_PROVIDERS' )
+or define( 'ESSENCE_DEFAULT_PROVIDERS', ESSENCE_LIB . 'providers.php' );
 
 
 
