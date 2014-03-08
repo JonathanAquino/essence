@@ -19,6 +19,7 @@
 	"homepage": "http://github.com/felixgirault/essence",
 	"require": {
 		"php": ">=5.4.0",
+		"blunt/blunt": "dev-master",
 		"ext-curl": "*"
 	},
 	"autoload": {
