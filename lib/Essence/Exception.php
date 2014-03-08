@@ -7,7 +7,7 @@
 
 namespace Essence;
 
-use Exception as NativeException;
+use Blunt\Exception as BluntException;
 
 
 
@@ -17,17 +17,4 @@ use Exception as NativeException;
  *	@package Essence
  */
 
-class Exception extends NativeException {
-
-	/**
-	 *	An alias to fit the Essence coding style.
-	 *	I'm probably mad.
-	 *
-	 *	@return string The exception message.
-	 */
-
-	public function message( ) {
-
-		return $this->getMessage( );
-	}
-}
+class Exception extends BluntException { }

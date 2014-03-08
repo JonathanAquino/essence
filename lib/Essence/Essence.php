@@ -7,13 +7,13 @@
 
 namespace Essence;
 
-use Essence\Cacheable;
-use Essence\Configurable;
+use Blunt\Cacheable;
+use Blunt\Configurable;
+use Blunt\Cache\Engine as CacheEngine;
+use Blunt\Dom\Parser as DomParser;
+use Blunt\Http\Client as HttpClient;
+use Blunt\Log\Logger;
 use Essence\Di\Container\Standard as StandardContainer;
-use Essence\Cache\Engine as CacheEngine;
-use Essence\Dom\Parser as DomParser;
-use Essence\Http\Client as HttpClient;
-use Essence\Log\Logger;
 use Essence\Provider\Collection;
 use Essence\Exception;
 
@@ -45,7 +45,7 @@ class Essence {
 	/**
 	 *	Internal HTTP client.
 	 *
-	 *	@var Essence\Http\Client
+	 *	@var Blunt\Http\Client
 	 */
 
 	protected $_Http = null;
@@ -55,7 +55,7 @@ class Essence {
 	/**
 	 *	Internal DOM parser.
 	 *
-	 *	@var Essence\Dom\Parser
+	 *	@var Blunt\Dom\Parser
 	 */
 
 	protected $_Dom = null;
@@ -65,7 +65,7 @@ class Essence {
 	/**
 	 *	Internal Logger.
 	 *
-	 *	@var Essence\Log\Logger
+	 *	@var Blunt\Log\Logger
 	 */
 
 	protected $_Logger = null;
@@ -102,10 +102,10 @@ class Essence {
 	 *	Constructor.
 	 *
 	 *	@param Essence\ProviderCollection $Collection Provider collection.
-	 *	@param Essence\Cache\Engine $Cache Cache engine.
-	 *	@param Essence\Http\Client $Http HTTP client.
-	 *	@param Essence\Dom\Parser $Cache DOM parser.
-	 *	@param Essence\Log\Logger $Logger Logger.
+	 *	@param Blunt\Cache\Engine $Cache Cache engine.
+	 *	@param Blunt\Http\Client $Http HTTP client.
+	 *	@param Blunt\Dom\Parser $Cache DOM parser.
+	 *	@param Blunt\Log\Logger $Logger Logger.
 	 */
 
 	public function __construct(

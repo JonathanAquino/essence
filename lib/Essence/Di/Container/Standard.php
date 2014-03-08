@@ -7,13 +7,13 @@
 
 namespace Essence\Di\Container;
 
+use Blunt\Di\Container;
+use Blunt\Cache\Engine\Volatile as VolatileCacheEngine;
+use Blunt\Dom\Parser\Native as NativeDomParser;
+use Blunt\Http\Client\Curl as CurlHttpClient;
+use Blunt\Http\Client\Native as NativeHttpClient;
+use Blunt\Log\Logger\Null as NullLogger;
 use Essence\Essence;
-use Essence\Di\Container;
-use Essence\Cache\Engine\Volatile as VolatileCacheEngine;
-use Essence\Dom\Parser\Native as NativeDomParser;
-use Essence\Http\Client\Curl as CurlHttpClient;
-use Essence\Http\Client\Native as NativeHttpClient;
-use Essence\Log\Logger\Null as NullLogger;
 use Essence\Provider\Collection;
 use Essence\Provider\OEmbed;
 use Essence\Provider\OpenGraph;

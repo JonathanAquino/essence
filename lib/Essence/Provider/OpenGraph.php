@@ -8,13 +8,13 @@
 
 namespace Essence\Provider;
 
+use Blunt\Dom\Parser as DomParser;
+use Blunt\Http\Client as HttpClient;
+use Blunt\Log\Logger;
+use Blunt\Utility\Hash;
 use Essence\Exception;
 use Essence\Media;
 use Essence\Provider;
-use Essence\Dom\Parser as DomParser;
-use Essence\Http\Client as HttpClient;
-use Essence\Log\Logger;
-use Essence\Utility\Hash;
 
 
 
@@ -30,7 +30,7 @@ class OpenGraph extends Provider {
 	/**
 	 *	Internal HTTP client.
 	 *
-	 *	@var Essence\Http\Client
+	 *	@var Blunt\Http\Client
 	 */
 
 	protected $_Http = null;
@@ -40,7 +40,7 @@ class OpenGraph extends Provider {
 	/**
 	 *	Internal DOM parser.
 	 *
-	 *	@var Essence\Dom\Parser
+	 *	@var Blunt\Dom\Parser
 	 */
 
 	protected $_Dom = null;
@@ -50,9 +50,9 @@ class OpenGraph extends Provider {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Http\Client $Http HTTP client.
-	 *	@param Essence\Dom\Parser $Dom DOM parser.
-	 *	@param Essence\Log\Logger $Log Logger.
+	 *	@param Blunt\Http\Client $Http HTTP client.
+	 *	@param Blunt\Dom\Parser $Dom DOM parser.
+	 *	@param Blunt\Log\Logger $Log Logger.
 	 */
 
 	public function __construct(

@@ -7,8 +7,8 @@
 
 namespace Essence\Provider;
 
-use Essence\Configurable;
-use Essence\Di\Container;
+use Blunt\Configurable;
+use Blunt\Di\Container;
 use Essence\Exception;
 
 
@@ -28,7 +28,7 @@ class Collection {
 	/**
 	 *	Dependency injection container.
 	 *
-	 *	@var Essence\Di\Container
+	 *	@var Blunt\Di\Container
 	 */
 
 	protected $_Container = null;
@@ -66,7 +66,7 @@ class Collection {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Di\Container $Container Dependency injection container
+	 *	@param Blunt\Di\Container $Container Dependency injection container
 	 *		used to build providers.
 	 */
 

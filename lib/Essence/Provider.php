@@ -7,10 +7,11 @@
 
 namespace Essence;
 
-use Essence\Configurable;
+use Blunt\Exception as BluntException;
+use Blunt\Configurable;
+use Blunt\Log\Logger;
 use Essence\Exception;
 use Essence\Media;
-use Essence\Log\Logger;
 
 
 
@@ -29,7 +30,7 @@ abstract class Provider {
 	/**
 	 *	Internal logger.
 	 *
-	 *	@var Essence\Log\Logger
+	 *	@var Blunt\Log\Logger
 	 */
 
 	protected $_Logger = null;
@@ -56,7 +57,7 @@ abstract class Provider {
 	/**
 	 *	Constructor.
 	 *
-	 *	@param Essence\Log\Logger $Logger Logger.
+	 *	@param Blunt\Log\Logger $Logger Logger.
 	 */
 
 	public function __construct( Logger $Logger ) {
@@ -69,6 +70,7 @@ abstract class Provider {
 	/**
 	 *	Fetches embed information from the given URL.
 	 *
+	 *	@todo Harmonize prepareURL() and completeMedia() behaviors.
 	 *	@param string $url URL to fetch informations from.
 	 *	@param array $options Custom options to be interpreted by the provider.
 	 *	@return Media|null Embed informations, or null if nothing could be
@@ -78,19 +80,26 @@ abstract class Provider {
 	public final function embed( $url, array $options = [ ]) {
 
 		$Media = null;
-
-		if ( is_callable( $this->prepare )) {
-			$url = call_user_func( $this->prepare, $url, $options );
-		}
+		$Exception = null;
 
 		try {
+			if ( is_callable( $this->prepare )) {
+				$url = call_user_func( $this->prepare, $url, $options );
+			}
+
 			$Media = $this->_embed( $url, $options );
 			$Media->setDefault( 'url', $url );
 
 			if ( is_callable( $this->complete )) {
 				call_user_func( $this->complete, $Media, $options );
 			}
-		} catch ( Exception $Exception ) {
+		} catch ( Exception $E ) {
+			$Exception = $E;
+		} catch ( BluntException $E ) {
+			$Exception = $E;
+		}
+
+		if ( $Exception ) {
 			$this->_Logger->log(
 				Logger::notice,
 				"Unable to embed $url",

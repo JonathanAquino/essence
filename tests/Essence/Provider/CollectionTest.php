@@ -8,10 +8,10 @@
 namespace Essence\Provider;
 
 use PHPUnit_Framework_TestCase;
+use Blunt\Di\Container;
+use Blunt\Log\Logger\Null as NullLogger;
 use Essence\Provider;
 use Essence\Provider\OEmbed;
-use Essence\Di\Container;
-use Essence\Log\Logger\Null as NullLogger;
 
 
 
