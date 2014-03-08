@@ -6,6 +6,10 @@
  */
 
 require_once dirname( dirname( __FILE__ ))
+	. DIRECTORY_SEPARATOR . 'vendor'
+	. DIRECTORY_SEPARATOR . 'autoload.php';
+
+require_once dirname( dirname( __FILE__ ))
 	. DIRECTORY_SEPARATOR . 'lib'
 	. DIRECTORY_SEPARATOR . 'bootstrap.php';
 
