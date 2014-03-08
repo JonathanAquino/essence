@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "5a90dc8ff29de69bd614c574ea7e40af",
+    "packages": [
+        {
+            "name": "blunt/blunt",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blunt-php/blunt.git",
+                "reference": "7945b329119cca8621314ddd671d814c65284d5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blunt-php/blunt/zipball/7945b329119cca8621314ddd671d814c65284d5e",
+                "reference": "7945b329119cca8621314ddd671d814c65284d5e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Blunt": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Félix Girault",
+                    "email": "felix.girault@gmail.com",
+                    "homepage": "http://www.felix-girault.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A smoking hot PHP framework.",
+            "homepage": "http://github.com/blunt-php/blunt",
+            "keywords": [
+                "framework",
+                "tools"
+            ],
+            "time": "2014-02-12 12:56:06"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "blunt/blunt": 20
+    },
+    "platform": {
+        "php": ">=5.4.0",
+        "ext-curl": "*"
+    },
+    "platform-dev": [
+
+    ]
+}
